@@ -1,0 +1,90 @@
+body {
+    background-color: hsl(0, 0%, 94%);
+    height: 100%;
+    font-size: 32px;
+    font-family: 'poppins';
+}
+
+.container {
+    background-color: hsl(0, 0%, 100%);
+    border: 0px solid black;
+    border-radius: 25px 25px 200px 25px;
+    width: 50%;
+    min-width: 580px;
+    max-width: 720px;
+    height: 60%;
+    min-height: 540px;
+    max-height: 540px;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.box {
+    background-color: hsl(0, 0%, 100%);
+    margin: 30px 50px 30px 50px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    /* margin-bottom: 35px; */
+}
+
+.input-cell {
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 12px;
+    margin: 10px 0 10px 0;
+    color: hsl(0, 1%, 44%);
+}
+
+.input {
+    font-size: 32px;
+    font-weight: 800;
+    width: 100px;
+    height: 60px;
+    border: 1px solid hsl(0, 0%, 86%);
+    border-radius: 10px;
+}
+
+.divider {
+    display: flex;
+    flex-direction: row;
+}
+
+hr {
+    /* border: 1px solid black; */
+    align-self: center;
+    width: 90%;
+}
+
+button {
+    background-color: hsl(259, 100%, 65%);
+    width: 90px;
+    height: 82px;
+    border: 0px;
+    border-radius: 90px;
+}
+
+.results-container {
+    background-color: rgba(100, 100, 100, 0);
+    font-weight: 800;
+    font-style: italic;
+    font-size: 80px;;
+}
+
+.result {
+    color: hsl(259, 100%, 65%);
+    padding-right: 10px;
+}
+
+h3 {
+    margin: 0px;
+    padding: 0px;
+    max-height: 95px;
+}
