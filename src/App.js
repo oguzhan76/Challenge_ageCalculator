@@ -66,3 +66,7 @@ function App() {
 }
 
 export default App;
+
+// validation
+// results needs to go a little higher
+//.box background is sticking outside
