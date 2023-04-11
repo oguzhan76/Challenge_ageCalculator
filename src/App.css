@@ -38,20 +38,34 @@ body {
     flex-direction: column;
 }
 
+
 label {
     font-size: 14px;
     margin: 10px 0 10px 0;
     color: hsl(0, 1%, 44%);
 }
 
-.input {
+input {
     font-size: 32px;
     text-indent: 15px;
     font-weight: 800;
-    width: 140px;
+    width: 160px;
     height: 70px;
     border: 1px solid hsl(0, 0%, 86%);
     border-radius: 10px;
+}
+.field-error input{
+    border-color: hsl(0, 100%, 67%);
+}
+
+.field-error label {
+    color: hsl(0, 100%, 67%);
+}
+
+.input-cell__error-message{
+    font-size: 14px;
+    margin-top: 6px;
+    color: hsl(0, 100%, 67%);
 }
 
 .input:hover {
@@ -63,6 +77,8 @@ label {
     outline-style: solid;
     outline-color: hsl(259, 100%, 65%);
 }
+
+/*---------------------------------------*/
 
 .divider {
     display: flex;
