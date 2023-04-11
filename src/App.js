@@ -1,5 +1,4 @@
-// import logo from './logo.svg';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css';
 
 function App() {
@@ -15,9 +14,17 @@ function App() {
   const [monthFieldError, setMonthFieldError] = useState('');
   const [dayFieldError, setDayFieldError] = useState('');
 
+  useEffect(() => {
+    day.current.focus();
+  }, [])
+
+  const handleKey = (event) => {
+    if(event.key === 'Enter')
+      handleOnClick();
+  }
+
   const handleOnClick = () => {
     if(!validate()) return;
-    setDayFieldError(!day.current.value);
     calculate()
   }
 
@@ -29,7 +36,6 @@ function App() {
 
     // check if all the fields are populated 
     let emptyField = false;
-    
     if(!day.current.value){
         setDayFieldError('This field is required');
         emptyField = true;
@@ -38,8 +44,8 @@ function App() {
         setMonthFieldError('This field is required');
         emptyField = true;
     }
-    if(!day.current.value){
-        setDayFieldError('This field is required');
+    if(!year.current.value){
+        setYearFieldError('This field is required');
         emptyField = true;
     }
     if(emptyField) return false;
@@ -62,9 +68,12 @@ function App() {
         isValid = false;
     }
 
-    const d = new Date(year.current.value, month.current.value-1, day.current.value);
-    console.log(d);
+    // if error so far no need to check further
+    if(!isValid) return false;
+
     // check if the date is in the past
+    const d = new Date(year.current.value, month.current.value-1, day.current.value);
+
     if(d > new Date()) {
         setYearFieldError('Must be in the past');
         isValid = false;
@@ -95,8 +104,8 @@ function App() {
   }
 
   return (
-    <div className='container'>
-      <div className='box'>
+    <div className='container' tabIndex={-1} onKeyDown={(e) => handleKey(e)}>
+      <div className='box' >
         <div className='input-container'>
           <div className={dayFieldError || monthFieldError || yearFieldError ? 'input-cell field-error' : 'input-cell'}>
             <label name='day'>D A Y</label>
@@ -117,7 +126,7 @@ function App() {
 
         <div className='divider'>
           <hr></hr>
-          <button onClick={handleOnClick}>
+          <button onClick={handleOnClick} >
             <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44">
               <g fill="none" stroke="#FFF" strokeWidth="2">
                 <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/>

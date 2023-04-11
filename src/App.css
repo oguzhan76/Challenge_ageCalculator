@@ -21,6 +21,10 @@ body {
     top: 0; left: 0; bottom: 0; right: 0;
 }
 
+.container:focus{
+    outline: none;
+}
+
 .box {
     background-color: hsl(0, 0%, 100%);
     margin: 30px 50px 30px 50px;
