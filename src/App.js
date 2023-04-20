@@ -24,8 +24,17 @@ function App() {
   }
 
   const handleOnClick = () => {
-    if(!validate()) return;
+    if(!validate()) {
+        resetResults();
+        return;
+    }
     calculate()
+  }
+
+  const resetResults = () => {
+      setYears('--');
+      setMonths('--');
+      setDays('--');
   }
 
   const validate = () => {
@@ -58,17 +67,23 @@ function App() {
     let isValid = true;
 
     // check if they are correct dates
-    if(dd > 31 || dd < 1 || !isNaN){
+    // console.log(isNaN(dd));
+    if(dd > 31 || dd < 1 || isNaN(day.current.value)){
         setDayFieldError('Must be a valid day');
         isValid = false;
     }
-      
-    if(mm > 12 || mm < 1 || !isNaN){
+    // console.log(mm, isNaN(month.current.value));
+    if(mm > 12 || mm < 1 || isNaN(month.current.value)){
         setMonthFieldError('Must be a valid month');
         isValid = false;
     }
+    
+    if(isNaN(year.current.value)) {
+      setYearFieldError('Must be a valid year');
+      isValid = false;
+    }
 
-    // if error so far no need to check further
+    // if error so far, no need to check further
     if(!isValid) return false;
 
     // check if the date is in the past
