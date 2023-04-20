@@ -2,7 +2,7 @@
   "name": "age-calculator",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://oguzhan76.github.io/Challenge_ageCalculator/",
+  "homepage": "https://oguzhan76.github.io/Challenge_ageCalculator",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
