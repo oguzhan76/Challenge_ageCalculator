@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.b230c1f1.css",
-    "main.js": "/static/js/main.64dd1dd4.js",
-    "index.html": "/index.html",
-    "main.b230c1f1.css.map": "/static/css/main.b230c1f1.css.map",
-    "main.64dd1dd4.js.map": "/static/js/main.64dd1dd4.js.map"
+    "main.css": "/Challenge_ageCalculator/static/css/main.b230c1f1.css",
+    "main.js": "/Challenge_ageCalculator/static/js/main.64dd1dd4.js",
+    "index.html": "/Challenge_ageCalculator/index.html",
+    "main.b230c1f1.css.map": "/Challenge_ageCalculator/static/css/main.b230c1f1.css.map",
+    "main.64dd1dd4.js.map": "/Challenge_ageCalculator/static/js/main.64dd1dd4.js.map"
   },
   "entrypoints": [
     "static/css/main.b230c1f1.css",
